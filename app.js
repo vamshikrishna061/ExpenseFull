@@ -10,10 +10,12 @@ const app = express();
 const cors = require("cors");
 
 const expenseRoutes = require("./routes/expense");
+const candyRoutes = require("./routes/candy");
 
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/expense", expenseRoutes);
+app.use("/candy", candyRoutes);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
